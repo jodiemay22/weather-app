@@ -12,7 +12,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="src/style.css" />
-    <script src="src/script.js"></script>
+    <script src="src/index.js"></script>
     <script
       src="https://kit.fontawesome.com/63a23bcb10.js"
       crossorigin="anonymous"
@@ -23,36 +23,41 @@
       href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;700&display=swap"
       rel="stylesheet"
     />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
 
   <div class="container">
     <body>
       <div class="card full-app">
         <div class="card-body">
-          <div class="row search-city">
-            <div class="col-6"></div>
+            <div class="row">
+              <div class="col-6">
+              <button  id="current-location-element">Current Location</button>
+            </div>
             <div class="col-6">
-              <form>
+              <form id="search-city">
                 <input
                   type="text"
                   class="form-control"
                   placeholder="Search your city"
+                  autocomplete="off"
+                  id="city-input"
                 />
               </form>
             </div>
           </div>
+          
 
           <div class="row">
-            <h1 class="current-city col">London</h1>
+            <h1 class="col current-city" id="city"></h1>
             <i class="fa-solid fa-sun fa-5x col current-forecast"></i>
-          </div>
+        </div>
           <div class="row current-forecast">
-            <h2 class="current-date" id="today">Thursday</h2>
+            <div class="col current-date" id="today">Thursday</div>
           </div>
-          <div class="row current-forecast">
-            <div class="current-temp">18℃</div>
+          <div class="col current-forecast">
+            <div class="current-temp" id="current-temp"></div>
           </div>
-
           <div class="row">
             <div class="card col future-card">
               <div class="card-body">
@@ -103,6 +108,7 @@
                 </p>
               </div>
             </div>
+          </div>
           </div>
         </div>
       </div>
